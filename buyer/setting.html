@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Settings - SmartProp</title>
+
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+
+        <div class="logo">
+            Smart<span>Prop</span>
+        </div>
+
+        <div class="nav-links">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="properties.html">Properties</a>
+            <a href="favorites.html">Favorites</a>
+            <a href="compare.html">Compare</a>
+            <a href="visits.html">My Visits</a>
+            <a href="messages.html">Messages</a>
+            <a href="settings.html" class="active">Settings</a>
+            <a href="#" onclick="logout()">Logout</a>
+        </div>
+
+    </nav>
+
+
+    <div class="buyer-layout">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="sidebar-title">
+                Buyer Panel
+            </div>
+
+            <a href="dashboard.html">
+                🏠 Dashboard
+            </a>
+
+            <a href="properties.html">
+                🔎 Find Properties
+            </a>
+
+            <a href="favorites.html">
+                ❤️ Favorites
+            </a>
+
+            <a href="compare.html">
+                ⚖️ Compare
+            </a>
+
+            <a href="visits.html">
+                📅 My Visits
+            </a>
+
+            <a href="messages.html">
+                💬 Messages
+            </a>
+
+            <a href="settings.html" class="active">
+                ⚙️ Settings
+            </a>
+
+            <a href="#" onclick="logout()" class="logout-link">
+                🚪 Logout
+            </a>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+        <main class="buyer-content">
+
+            <div class="page-header">
+
+                <div>
+                    <h1>Settings</h1>
+
+                    <p>
+                        Manage your SmartProp account and profile.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- PROFILE SETTINGS -->
+
+            <section class="settings-card">
+
+                <div class="settings-card-header">
+
+                    <div>
+                        <h2>Profile Information</h2>
+
+                        <p>
+                            Update your personal information.
+                        </p>
+                    </div>
+
+                    <div class="settings-avatar" id="settingsAvatar">
+                        B
+                    </div>
+
+                </div>
+
+
+                <form id="profileForm">
+
+                    <div class="settings-form-grid">
+
+                        <div class="form-group">
+
+                            <label for="settingsName">
+                                Full Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="settingsName"
+                                placeholder="Enter your name"
+                                required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="settingsEmail">
+                                Email Address
+                            </label>
+
+                            <input
+                                type="email"
+                                id="settingsEmail"
+                                placeholder="Enter your email"
+                                required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="settingsPhone">
+                                Phone Number
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="settingsPhone"
+                                placeholder="Enter your phone number"
+                                required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Account Type
+                            </label>
+
+                            <input
+                                type="text"
+                                value="Buyer"
+                                disabled>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="settings-actions">
+
+                        <button
+                            type="submit"
+                            class="primary-btn">
+                            Save Changes
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+
+            <!-- PASSWORD -->
+
+            <section class="settings-card">
+
+                <div class="settings-card-header">
+
+                    <div>
+                        <h2>Change Password</h2>
+
+                        <p>
+                            Update your account password.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <form id="passwordForm">
+
+                    <div class="settings-form-grid">
+
+                        <div class="form-group">
+
+                            <label for="currentPassword">
+                                Current Password
+                            </label>
+
+                            <input
+                                type="password"
+                                id="currentPassword"
+                                placeholder="Enter current password"
+                                required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="newPassword">
+                                New Password
+                            </label>
+
+                            <input
+                                type="password"
+                                id="newPassword"
+                                placeholder="Enter new password"
+                                required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="confirmPassword">
+                                Confirm New Password
+                            </label>
+
+                            <input
+                                type="password"
+                                id="confirmPassword"
+                                placeholder="Confirm new password"
+                                required>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="settings-actions">
+
+                        <button
+                            type="submit"
+                            class="primary-btn">
+                            Update Password
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+
+            <!-- ACCOUNT -->
+
+            <section class="settings-card danger-card">
+
+                <div class="settings-card-header">
+
+                    <div>
+                        <h2>Account</h2>
+
+                        <p>
+                            Manage your account session.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="logout-settings-btn"
+                    onclick="logout()">
+                    🚪 Logout from SmartProp
+                </button>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script src="../auth.js"></script>
+
+</body>
+
+</html>

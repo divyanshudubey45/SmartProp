@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compare Properties - SmartProp</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="logo">Smart<span>Prop</span></div>
+
+    <div class="nav-links">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="properties.html">Properties</a>
+        <a href="favorites.html">Favorites</a>
+        <a href="compare.html" class="active">Compare</a>
+        <a href="#" onclick="logout()">Logout</a>
+    </div>
+</nav>
+
+
+<div class="buyer-layout">
+
+    <aside class="sidebar">
+
+        <div class="sidebar-title">
+            Buyer Panel
+        </div>
+
+        <a href="dashboard.html">🏠 Dashboard</a>
+        <a href="properties.html">🔎 Find Properties</a>
+        <a href="favorites.html">❤️ Favorites</a>
+        <a href="compare.html" class="active">⚖️ Compare</a>
+        <a href="#">📅 My Visits</a>
+        <a href="#">💬 Messages</a>
+        <a href="#">⚙️ Settings</a>
+
+        <a href="#" onclick="logout()" class="logout-link">
+            🚪 Logout
+        </a>
+
+    </aside>
+
+
+    <main class="buyer-content">
+
+        <div class="page-header">
+
+            <div>
+                <h1>Compare Properties</h1>
+                <p>Compare your selected properties side-by-side.</p>
+            </div>
+
+            <a href="properties.html" class="primary-btn">
+                + Add Properties
+            </a>
+
+        </div>
+
+
+        <div id="emptyCompare" class="empty-state">
+
+            <div class="empty-icon">⚖️</div>
+
+            <h2>No Properties to Compare</h2>
+
+            <p>
+                Select properties from the property listing page
+                and add them to comparison.
+            </p>
+
+            <a href="properties.html" class="primary-btn">
+                Browse Properties
+            </a>
+
+        </div>
+
+
+        <div id="compareSection" style="display:none;">
+
+            <div class="compare-header">
+
+                <h2>Property Comparison</h2>
+
+                <button
+                    type="button"
+                    class="secondary-btn"
+                    onclick="clearCompare()">
+                    Clear Comparison
+                </button>
+
+            </div>
+
+
+            <div class="compare-table-wrapper">
+
+                <table class="compare-table">
+
+                    <thead>
+                        <tr>
+
+                            <th>Feature</th>
+
+                            <th id="propertyColumn1">
+                                Property 1
+                            </th>
+
+                            <th id="propertyColumn2">
+                                Property 2
+                            </th>
+
+                            <th id="propertyColumn3">
+                                Property 3
+                            </th>
+
+                        </tr>
+                    </thead>
+
+
+                    <tbody>
+
+                        <tr>
+                            <td>Property</td>
+                            <td id="compareTitle1">-</td>
+                            <td id="compareTitle2">-</td>
+                            <td id="compareTitle3">-</td>
+                        </tr>
+
+                        <tr>
+                            <td>Location</td>
+                            <td id="compareLocation1">-</td>
+                            <td id="compareLocation2">-</td>
+                            <td id="compareLocation3">-</td>
+                        </tr>
+
+                        <tr>
+                            <td>Price</td>
+                            <td id="comparePrice1">-</td>
+                            <td id="comparePrice2">-</td>
+                            <td id="comparePrice3">-</td>
+                        </tr>
+
+                        <tr>
+                            <td>Estimated Price</td>
+                            <td id="compareEstimated1">-</td>
+                            <td id="compareEstimated2">-</td>
+                            <td id="compareEstimated3">-</td>
+                        </tr>
+
+                        <tr>
+                            <td>Property Type</td>
+                            <td id="compareType1">-</td>
+                            <td id="compareType2">-</td>
+                            <td id="compareType3">-</td>
+                        </tr>
+
+                        <tr>
+                            <td>BHK</td>
+                            <td id="compareBhk1">-</td>
+                            <td id="compareBhk2">-</td>
+                            <td id="compareBhk3">-</td>
+                        </tr>
+
+                        <tr>
+                            <td>Area</td>
+                            <td id="compareArea1">-</td>
+                            <td id="compareArea2">-</td>
+                            <td id="compareArea3">-</td>
+                        </tr>
+
+                        <tr>
+                            <td>Floor</td>
+                            <td id="compareFloor1">-</td>
+                            <td id="compareFloor2">-</td>
+                            <td id="compareFloor3">-</td>
+                        </tr>
+
+                        <tr>
+                            <td>Age</td>
+                            <td id="compareAge1">-</td>
+                            <td id="compareAge2">-</td>
+                            <td id="compareAge3">-</td>
+                        </tr>
+
+                        <tr>
+                            <td>Availability</td>
+                            <td id="compareAvailability1">-</td>
+                            <td id="compareAvailability2">-</td>
+                            <td id="compareAvailability3">-</td>
+                        </tr>
+
+                        <tr>
+                            <td>Smart Match</td>
+                            <td id="compareMatch1">-</td>
+                            <td id="compareMatch2">-</td>
+                            <td id="compareMatch3">-</td>
+                        </tr>
+
+                        <tr>
+                            <td></td>
+
+                            <td>
+                                <a
+                                    id="compareView1"
+                                    href="#"
+                                    class="primary-btn">
+                                    View Details
+                                </a>
+                            </td>
+
+                            <td>
+                                <a
+                                    id="compareView2"
+                                    href="#"
+                                    class="primary-btn">
+                                    View Details
+                                </a>
+                            </td>
+
+                            <td>
+                                <a
+                                    id="compareView3"
+                                    href="#"
+                                    class="primary-btn">
+                                    View Details
+                                </a>
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<script src="../auth.js"></script>
+
+</body>
+</html>
